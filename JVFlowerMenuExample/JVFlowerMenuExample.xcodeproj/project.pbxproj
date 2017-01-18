@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		302F7B05561A69A60DABE7E1 /* Pods_JVFlowerMenuExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37194F0EF9C6F3031D83D5AF /* Pods_JVFlowerMenuExample.framework */; };
+		80B16F065674C04AEC00DA8F /* Pods_JVFlowerMenuExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605ADFF455ADA0B4F516E12E /* Pods_JVFlowerMenuExampleUITests.framework */; };
+		C31478E41E2EEC0A0059BDB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31478E31E2EEC0A0059BDB5 /* AppDelegate.swift */; };
+		C31478E61E2EEC0A0059BDB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31478E51E2EEC0A0059BDB5 /* ViewController.swift */; };
+		C31478E91E2EEC0A0059BDB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31478E71E2EEC0A0059BDB5 /* Main.storyboard */; };
+		C31478EB1E2EEC0A0059BDB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31478EA1E2EEC0A0059BDB5 /* Assets.xcassets */; };
+		C31478EE1E2EEC0A0059BDB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31478EC1E2EEC0A0059BDB5 /* LaunchScreen.storyboard */; };
+		C31478F91E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31478F81E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C31478F51E2EEC0A0059BDB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C31478D81E2EEC0A0059BDB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C31478DF1E2EEC0A0059BDB5;
+			remoteInfo = JVFlowerMenuExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37194F0EF9C6F3031D83D5AF /* Pods_JVFlowerMenuExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JVFlowerMenuExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		605ADFF455ADA0B4F516E12E /* Pods_JVFlowerMenuExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JVFlowerMenuExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DF71474098354C4E18DE11 /* Pods-JVFlowerMenuExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JVFlowerMenuExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-JVFlowerMenuExample/Pods-JVFlowerMenuExample.release.xcconfig"; sourceTree = "<group>"; };
+		C31478E01E2EEC0A0059BDB5 /* JVFlowerMenuExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JVFlowerMenuExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31478E31E2EEC0A0059BDB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C31478E51E2EEC0A0059BDB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C31478E81E2EEC0A0059BDB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C31478EA1E2EEC0A0059BDB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C31478ED1E2EEC0A0059BDB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C31478EF1E2EEC0A0059BDB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31478F41E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JVFlowerMenuExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31478F81E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVFlowerMenuExampleUITests.swift; sourceTree = "<group>"; };
+		C31478FA1E2EEC0A0059BDB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C45CCB8CE2A72C1C62FAFBD5 /* Pods-JVFlowerMenuExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JVFlowerMenuExampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JVFlowerMenuExampleUITests/Pods-JVFlowerMenuExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0341EDD85E2D765569FE54B /* Pods-JVFlowerMenuExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JVFlowerMenuExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JVFlowerMenuExampleUITests/Pods-JVFlowerMenuExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FA4D87F73BE25C52EF11478E /* Pods-JVFlowerMenuExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JVFlowerMenuExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JVFlowerMenuExample/Pods-JVFlowerMenuExample.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C31478DD1E2EEC0A0059BDB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				302F7B05561A69A60DABE7E1 /* Pods_JVFlowerMenuExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31478F11E2EEC0A0059BDB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B16F065674C04AEC00DA8F /* Pods_JVFlowerMenuExampleUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		252FCEB6A1422207D7FAF9B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37194F0EF9C6F3031D83D5AF /* Pods_JVFlowerMenuExample.framework */,
+				605ADFF455ADA0B4F516E12E /* Pods_JVFlowerMenuExampleUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C31478D71E2EEC0A0059BDB5 = {
+			isa = PBXGroup;
+			children = (
+				C31478E21E2EEC0A0059BDB5 /* JVFlowerMenuExample */,
+				C31478F71E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests */,
+				C31478E11E2EEC0A0059BDB5 /* Products */,
+				E8B8B2B817429377ED160ECC /* Pods */,
+				252FCEB6A1422207D7FAF9B9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C31478E11E2EEC0A0059BDB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C31478E01E2EEC0A0059BDB5 /* JVFlowerMenuExample.app */,
+				C31478F41E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C31478E21E2EEC0A0059BDB5 /* JVFlowerMenuExample */ = {
+			isa = PBXGroup;
+			children = (
+				C31478E31E2EEC0A0059BDB5 /* AppDelegate.swift */,
+				C31478E51E2EEC0A0059BDB5 /* ViewController.swift */,
+				C31478E71E2EEC0A0059BDB5 /* Main.storyboard */,
+				C31478EA1E2EEC0A0059BDB5 /* Assets.xcassets */,
+				C31478EC1E2EEC0A0059BDB5 /* LaunchScreen.storyboard */,
+				C31478EF1E2EEC0A0059BDB5 /* Info.plist */,
+			);
+			path = JVFlowerMenuExample;
+			sourceTree = "<group>";
+		};
+		C31478F71E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C31478F81E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests.swift */,
+				C31478FA1E2EEC0A0059BDB5 /* Info.plist */,
+			);
+			path = JVFlowerMenuExampleUITests;
+			sourceTree = "<group>";
+		};
+		E8B8B2B817429377ED160ECC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA4D87F73BE25C52EF11478E /* Pods-JVFlowerMenuExample.debug.xcconfig */,
+				95DF71474098354C4E18DE11 /* Pods-JVFlowerMenuExample.release.xcconfig */,
+				C45CCB8CE2A72C1C62FAFBD5 /* Pods-JVFlowerMenuExampleUITests.debug.xcconfig */,
+				E0341EDD85E2D765569FE54B /* Pods-JVFlowerMenuExampleUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C31478DF1E2EEC0A0059BDB5 /* JVFlowerMenuExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31478FD1E2EEC0A0059BDB5 /* Build configuration list for PBXNativeTarget "JVFlowerMenuExample" */;
+			buildPhases = (
+				AFFB226987546C45A99299C2 /* [CP] Check Pods Manifest.lock */,
+				C31478DC1E2EEC0A0059BDB5 /* Sources */,
+				C31478DD1E2EEC0A0059BDB5 /* Frameworks */,
+				C31478DE1E2EEC0A0059BDB5 /* Resources */,
+				988DAA870C06305D8D1BE279 /* [CP] Embed Pods Frameworks */,
+				F86F66C8DA9369028A959B9E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JVFlowerMenuExample;
+			productName = JVFlowerMenuExample;
+			productReference = C31478E01E2EEC0A0059BDB5 /* JVFlowerMenuExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C31478F31E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31479001E2EEC0A0059BDB5 /* Build configuration list for PBXNativeTarget "JVFlowerMenuExampleUITests" */;
+			buildPhases = (
+				D6E7DE5EE77358FB5EF3F3F0 /* [CP] Check Pods Manifest.lock */,
+				C31478F01E2EEC0A0059BDB5 /* Sources */,
+				C31478F11E2EEC0A0059BDB5 /* Frameworks */,
+				C31478F21E2EEC0A0059BDB5 /* Resources */,
+				30B9D4A171673CE7D018C327 /* [CP] Embed Pods Frameworks */,
+				1DD159C59F499FC6463B25C3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C31478F61E2EEC0A0059BDB5 /* PBXTargetDependency */,
+			);
+			name = JVFlowerMenuExampleUITests;
+			productName = JVFlowerMenuExampleUITests;
+			productReference = C31478F41E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C31478D81E2EEC0A0059BDB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Jon Vogel";
+				TargetAttributes = {
+					C31478DF1E2EEC0A0059BDB5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					C31478F31E2EEC0A0059BDB5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C31478DF1E2EEC0A0059BDB5;
+					};
+				};
+			};
+			buildConfigurationList = C31478DB1E2EEC0A0059BDB5 /* Build configuration list for PBXProject "JVFlowerMenuExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C31478D71E2EEC0A0059BDB5;
+			productRefGroup = C31478E11E2EEC0A0059BDB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C31478DF1E2EEC0A0059BDB5 /* JVFlowerMenuExample */,
+				C31478F31E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C31478DE1E2EEC0A0059BDB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31478EE1E2EEC0A0059BDB5 /* LaunchScreen.storyboard in Resources */,
+				C31478EB1E2EEC0A0059BDB5 /* Assets.xcassets in Resources */,
+				C31478E91E2EEC0A0059BDB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31478F21E2EEC0A0059BDB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DD159C59F499FC6463B25C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JVFlowerMenuExampleUITests/Pods-JVFlowerMenuExampleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30B9D4A171673CE7D018C327 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JVFlowerMenuExampleUITests/Pods-JVFlowerMenuExampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		988DAA870C06305D8D1BE279 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JVFlowerMenuExample/Pods-JVFlowerMenuExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFFB226987546C45A99299C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D6E7DE5EE77358FB5EF3F3F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F86F66C8DA9369028A959B9E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JVFlowerMenuExample/Pods-JVFlowerMenuExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C31478DC1E2EEC0A0059BDB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31478E61E2EEC0A0059BDB5 /* ViewController.swift in Sources */,
+				C31478E41E2EEC0A0059BDB5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31478F01E2EEC0A0059BDB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31478F91E2EEC0A0059BDB5 /* JVFlowerMenuExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C31478F61E2EEC0A0059BDB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C31478DF1E2EEC0A0059BDB5 /* JVFlowerMenuExample */;
+			targetProxy = C31478F51E2EEC0A0059BDB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C31478E71E2EEC0A0059BDB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31478E81E2EEC0A0059BDB5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C31478EC1E2EEC0A0059BDB5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31478ED1E2EEC0A0059BDB5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C31478FB1E2EEC0A0059BDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C31478FC1E2EEC0A0059BDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C31478FE1E2EEC0A0059BDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA4D87F73BE25C52EF11478E /* Pods-JVFlowerMenuExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JVFlowerMenuExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jonVogel.JVFlowerMenuExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C31478FF1E2EEC0A0059BDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95DF71474098354C4E18DE11 /* Pods-JVFlowerMenuExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JVFlowerMenuExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jonVogel.JVFlowerMenuExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C31479011E2EEC0A0059BDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C45CCB8CE2A72C1C62FAFBD5 /* Pods-JVFlowerMenuExampleUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JVFlowerMenuExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jonVogel.JVFlowerMenuExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JVFlowerMenuExample;
+			};
+			name = Debug;
+		};
+		C31479021E2EEC0A0059BDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0341EDD85E2D765569FE54B /* Pods-JVFlowerMenuExampleUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = JVFlowerMenuExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jonVogel.JVFlowerMenuExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JVFlowerMenuExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C31478DB1E2EEC0A0059BDB5 /* Build configuration list for PBXProject "JVFlowerMenuExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31478FB1E2EEC0A0059BDB5 /* Debug */,
+				C31478FC1E2EEC0A0059BDB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C31478FD1E2EEC0A0059BDB5 /* Build configuration list for PBXNativeTarget "JVFlowerMenuExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31478FE1E2EEC0A0059BDB5 /* Debug */,
+				C31478FF1E2EEC0A0059BDB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C31479001E2EEC0A0059BDB5 /* Build configuration list for PBXNativeTarget "JVFlowerMenuExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31479011E2EEC0A0059BDB5 /* Debug */,
+				C31479021E2EEC0A0059BDB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C31478D81E2EEC0A0059BDB5 /* Project object */;
+}
