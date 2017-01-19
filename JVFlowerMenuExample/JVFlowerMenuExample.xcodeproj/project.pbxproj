@@ -184,6 +184,7 @@
 				TargetAttributes = {
 					C31478DF1E2EEC0A0059BDB5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WEZXTSQ23M;
 						ProvisioningStyle = Automatic;
 					};
 					C31478F31E2EEC0A0059BDB5 = {
@@ -471,6 +472,7 @@
 			baseConfigurationReference = FA4D87F73BE25C52EF11478E /* Pods-JVFlowerMenuExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WEZXTSQ23M;
 				INFOPLIST_FILE = JVFlowerMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jonVogel.JVFlowerMenuExample;
@@ -484,6 +486,7 @@
 			baseConfigurationReference = 95DF71474098354C4E18DE11 /* Pods-JVFlowerMenuExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WEZXTSQ23M;
 				INFOPLIST_FILE = JVFlowerMenuExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jonVogel.JVFlowerMenuExample;
@@ -539,6 +542,7 @@
 				C31478FF1E2EEC0A0059BDB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C31479001E2EEC0A0059BDB5 /* Build configuration list for PBXNativeTarget "JVFlowerMenuExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +551,7 @@
 				C31479021E2EEC0A0059BDB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

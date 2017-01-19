@@ -16,5 +16,6 @@ s.platform     = :ios, '9.3'
 s.requires_arc = true
 
 s.source_files = "JVFlowerMenu/**/*"
+s.ios.resource_bundle = { 'JVFlowerImages' => 'JVFlowerMenu/**/*.xcassets' }
 
 end

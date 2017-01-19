@@ -7,12 +7,30 @@
 //
 
 import UIKit
+import JVFlowerMenu
+
 
 class ViewController: UIViewController {
 
+    
+    var flowerMenu: JVFlowerMenu!
+    
+    
+    var pedalNames = ["Skip", "Like", "Replay"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.flowerMenu = JVFlowerMenu(withPosition: Position.Center, andSuperView: self.view, andImage: UIImage(named: "Menu"))
+
+        for name in self.pedalNames {
+            guard let image = UIImage(named: "Menu") else{
+                return
+            }
+            
+            self.flowerMenu.addPedal(theImage: image, identifier: name)
+        }
+        
+        self.flowerMenu.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +39,28 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController: FlowerMenuDelegate {
+    
+    func flowerMenuDidExpand() {
+        
+        print("Exanded")
+        
+        
+    }
+    
+    
+    func flowerMenuDidRetract() {
+        print("Collapsed")
+        
+    }
+    
+    func flowerMenuDidSelectPedalWithID(theMenu: JVFlowerMenu, identifier: String, pedal: UIView) {
+        
+        
+        print("Selected - \(identifier)")
+        
+    }
 }
 
