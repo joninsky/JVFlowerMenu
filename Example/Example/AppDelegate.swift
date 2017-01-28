@@ -1,12 +1,14 @@
 //
 //  AppDelegate.swift
-//  JVFlowerMenuExample
+//  Example
 //
-//  Created by Jon Vogel on 1/17/17.
+//  Created by Jon Vogel on 1/26/17.
 //  Copyright © 2017 Jon Vogel. All rights reserved.
 //
 
 import UIKit
+import JVFlowerMenu
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

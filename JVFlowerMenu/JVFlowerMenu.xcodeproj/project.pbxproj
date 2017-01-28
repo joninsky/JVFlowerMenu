@@ -7,23 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C31478CD1E2EE9A30059BDB5 /* JVFlowerMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = C31478CB1E2EE9A30059BDB5 /* JVFlowerMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C31478D41E2EE9C00059BDB5 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31478D31E2EE9C00059BDB5 /* Enumerations.swift */; };
-		C31478D61E2EE9CC0059BDB5 /* JVFlowerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31478D51E2EE9CC0059BDB5 /* JVFlowerMenu.swift */; };
-		C38D31861E31838A0041B9F3 /* JVFlowerMenuAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C38D31851E31838A0041B9F3 /* JVFlowerMenuAssets.xcassets */; };
+		C329928B1E3A87B700DA20FD /* JVFlowerMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = C32992891E3A87B700DA20FD /* JVFlowerMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C32992921E3A87C900DA20FD /* JVFlowerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32992911E3A87C900DA20FD /* JVFlowerMenu.swift */; };
+		C32992C01E3A98CB00DA20FD /* Pedal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32992BF1E3A98CB00DA20FD /* Pedal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C31478C81E2EE9A30059BDB5 /* JVFlowerMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JVFlowerMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C31478CB1E2EE9A30059BDB5 /* JVFlowerMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JVFlowerMenu.h; sourceTree = "<group>"; };
-		C31478CC1E2EE9A30059BDB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C31478D31E2EE9C00059BDB5 /* Enumerations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
-		C31478D51E2EE9CC0059BDB5 /* JVFlowerMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVFlowerMenu.swift; sourceTree = "<group>"; };
-		C38D31851E31838A0041B9F3 /* JVFlowerMenuAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = JVFlowerMenuAssets.xcassets; sourceTree = "<group>"; };
+		C32992861E3A87B700DA20FD /* JVFlowerMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JVFlowerMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32992891E3A87B700DA20FD /* JVFlowerMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JVFlowerMenu.h; sourceTree = "<group>"; };
+		C329928A1E3A87B700DA20FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C32992911E3A87C900DA20FD /* JVFlowerMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVFlowerMenu.swift; sourceTree = "<group>"; };
+		C32992BF1E3A98CB00DA20FD /* Pedal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pedal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C31478C41E2EE9A30059BDB5 /* Frameworks */ = {
+		C32992821E3A87B700DA20FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,30 +31,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C31478BE1E2EE9A30059BDB5 = {
+		C329927C1E3A87B700DA20FD = {
 			isa = PBXGroup;
 			children = (
-				C31478CA1E2EE9A30059BDB5 /* JVFlowerMenu */,
-				C31478C91E2EE9A30059BDB5 /* Products */,
+				C32992881E3A87B700DA20FD /* JVFlowerMenu */,
+				C32992871E3A87B700DA20FD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C31478C91E2EE9A30059BDB5 /* Products */ = {
+		C32992871E3A87B700DA20FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C31478C81E2EE9A30059BDB5 /* JVFlowerMenu.framework */,
+				C32992861E3A87B700DA20FD /* JVFlowerMenu.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C31478CA1E2EE9A30059BDB5 /* JVFlowerMenu */ = {
+		C32992881E3A87B700DA20FD /* JVFlowerMenu */ = {
 			isa = PBXGroup;
 			children = (
-				C31478CB1E2EE9A30059BDB5 /* JVFlowerMenu.h */,
-				C31478CC1E2EE9A30059BDB5 /* Info.plist */,
-				C31478D31E2EE9C00059BDB5 /* Enumerations.swift */,
-				C31478D51E2EE9CC0059BDB5 /* JVFlowerMenu.swift */,
-				C38D31851E31838A0041B9F3 /* JVFlowerMenuAssets.xcassets */,
+				C32992891E3A87B700DA20FD /* JVFlowerMenu.h */,
+				C329928A1E3A87B700DA20FD /* Info.plist */,
+				C32992911E3A87C900DA20FD /* JVFlowerMenu.swift */,
+				C32992BF1E3A98CB00DA20FD /* Pedal.swift */,
 			);
 			path = JVFlowerMenu;
 			sourceTree = "<group>";
@@ -64,25 +61,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		C31478C51E2EE9A30059BDB5 /* Headers */ = {
+		C32992831E3A87B700DA20FD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31478CD1E2EE9A30059BDB5 /* JVFlowerMenu.h in Headers */,
+				C329928B1E3A87B700DA20FD /* JVFlowerMenu.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C31478C71E2EE9A30059BDB5 /* JVFlowerMenu */ = {
+		C32992851E3A87B700DA20FD /* JVFlowerMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C31478D01E2EE9A30059BDB5 /* Build configuration list for PBXNativeTarget "JVFlowerMenu" */;
+			buildConfigurationList = C329928E1E3A87B700DA20FD /* Build configuration list for PBXNativeTarget "JVFlowerMenu" */;
 			buildPhases = (
-				C31478C31E2EE9A30059BDB5 /* Sources */,
-				C31478C41E2EE9A30059BDB5 /* Frameworks */,
-				C31478C51E2EE9A30059BDB5 /* Headers */,
-				C31478C61E2EE9A30059BDB5 /* Resources */,
+				C32992811E3A87B700DA20FD /* Sources */,
+				C32992821E3A87B700DA20FD /* Frameworks */,
+				C32992831E3A87B700DA20FD /* Headers */,
+				C32992841E3A87B700DA20FD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -90,67 +87,66 @@
 			);
 			name = JVFlowerMenu;
 			productName = JVFlowerMenu;
-			productReference = C31478C81E2EE9A30059BDB5 /* JVFlowerMenu.framework */;
+			productReference = C32992861E3A87B700DA20FD /* JVFlowerMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C31478BF1E2EE9A30059BDB5 /* Project object */ = {
+		C329927D1E3A87B700DA20FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Jon Vogel";
 				TargetAttributes = {
-					C31478C71E2EE9A30059BDB5 = {
+					C32992851E3A87B700DA20FD = {
 						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = C31478C21E2EE9A30059BDB5 /* Build configuration list for PBXProject "JVFlowerMenu" */;
+			buildConfigurationList = C32992801E3A87B700DA20FD /* Build configuration list for PBXProject "JVFlowerMenu" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = C31478BE1E2EE9A30059BDB5;
-			productRefGroup = C31478C91E2EE9A30059BDB5 /* Products */;
+			mainGroup = C329927C1E3A87B700DA20FD;
+			productRefGroup = C32992871E3A87B700DA20FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C31478C71E2EE9A30059BDB5 /* JVFlowerMenu */,
+				C32992851E3A87B700DA20FD /* JVFlowerMenu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C31478C61E2EE9A30059BDB5 /* Resources */ = {
+		C32992841E3A87B700DA20FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C38D31861E31838A0041B9F3 /* JVFlowerMenuAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C31478C31E2EE9A30059BDB5 /* Sources */ = {
+		C32992811E3A87B700DA20FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31478D41E2EE9C00059BDB5 /* Enumerations.swift in Sources */,
-				C31478D61E2EE9CC0059BDB5 /* JVFlowerMenu.swift in Sources */,
+				C32992C01E3A98CB00DA20FD /* Pedal.swift in Sources */,
+				C32992921E3A87C900DA20FD /* JVFlowerMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C31478CE1E2EE9A30059BDB5 /* Debug */ = {
+		C329928C1E3A87B700DA20FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -203,7 +199,7 @@
 			};
 			name = Debug;
 		};
-		C31478CF1E2EE9A30059BDB5 /* Release */ = {
+		C329928D1E3A87B700DA20FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -249,7 +245,7 @@
 			};
 			name = Release;
 		};
-		C31478D11E2EE9A30059BDB5 /* Debug */ = {
+		C329928F1E3A87B700DA20FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -269,7 +265,7 @@
 			};
 			name = Debug;
 		};
-		C31478D21E2EE9A30059BDB5 /* Release */ = {
+		C32992901E3A87B700DA20FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -291,25 +287,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C31478C21E2EE9A30059BDB5 /* Build configuration list for PBXProject "JVFlowerMenu" */ = {
+		C32992801E3A87B700DA20FD /* Build configuration list for PBXProject "JVFlowerMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C31478CE1E2EE9A30059BDB5 /* Debug */,
-				C31478CF1E2EE9A30059BDB5 /* Release */,
+				C329928C1E3A87B700DA20FD /* Debug */,
+				C329928D1E3A87B700DA20FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C31478D01E2EE9A30059BDB5 /* Build configuration list for PBXNativeTarget "JVFlowerMenu" */ = {
+		C329928E1E3A87B700DA20FD /* Build configuration list for PBXNativeTarget "JVFlowerMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C31478D11E2EE9A30059BDB5 /* Debug */,
-				C31478D21E2EE9A30059BDB5 /* Release */,
+				C329928F1E3A87B700DA20FD /* Debug */,
+				C32992901E3A87B700DA20FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C31478BF1E2EE9A30059BDB5 /* Project object */;
+	rootObject = C329927D1E3A87B700DA20FD /* Project object */;
 }

@@ -2,108 +2,109 @@
 //  JVFlowerMenu.swift
 //  JVFlowerMenu
 //
-//  Created by Jon Vogel on 1/17/17.
+//  Created by Jon Vogel on 1/26/17.
 //  Copyright © 2017 Jon Vogel. All rights reserved.
 //
 
 import UIKit
 
-public protocol FlowerMenuDelegate {
-    func flowerMenuDidSelectPedalWithID(theMenu: JVFlowerMenu, identifier: String, pedal: UIView)
+///Delegate declaration for the `delegate` property of a `JVFlower` menu.
+public protocol JVFlowerMenuDelegate {
+    /// Delegate function that gets called when a `Pedal` of a `JVFlowerMenu` gets tapped.
+    ///
+    /// - Parameters:
+    ///   - theMenu: The `JVFlowerMenu` that had one of its `Pedal`'s tapped.
+    ///   - pedal: The `Pedal` that was tapped.
+    func flowerMenuDidSelectPedalWithID(_ theMenu: JVFlowerMenu, pedal: Pedal)
+    /// Delegate function that gets called when the `JVFlowerMenu` expands. Expansion happens when the user taps the `JVFlowerMenu` and it is not currently expanded.
     func flowerMenuDidExpand()
+    /// Delegate function that gets called when the `JVFlowerMenu` collapses. The `JVFlowerMenu` collapses when the user taps it and it is currently expanded.
     func flowerMenuDidRetract()
 }
 
-public enum Position {
-    case UpperRight
-    case UpperLeft
-    case LowerRight
-    case LowerLeft
-    case Center
-}
 
-public class JVFlowerMenu: UIImageView {
+
+/// The class that represents the `JVFlowerMenu`
+open class JVFlowerMenu: Pedal {
     
     //MARK: Public Variables
-    public var centerView: UIView!
-    public var pedals: [UIView] = [UIView]()
-    public var pedalSize: CGFloat!
-    public var pedalDistance: CGFloat = 100
-    public var pedalSpace: CGFloat = 50
-    public var startAngle: CGFloat!
-    public var growthDuration: TimeInterval = 0.4
-    public var stagger: TimeInterval = 0.06
-    public var menuIsExpanded: Bool = false
-    public var delegate: FlowerMenuDelegate?
-    public var showPedalLabels = false
-    public var currentPosition: Position! {
-        willSet(value) {
-            self.previousPosition = self.currentPosition
-        }
-        didSet{
-            
-            self.constrainToPosition(thePosition: self.currentPosition, animate: true)
-        }
-    }
+    /// The `Pedal`'s that have been added to the menu
+    open var pedals: [Pedal] = [Pedal]()
+    /// The distance the `Pedal`'s will fly away from the `JVFlowerMenu`. The default is 100
+    open var pedalDistance: CGFloat = 100
+    /// The space between each `Pedal` once expanded. The Default is 50
+    open var pedalSpace: CGFloat = 50
+    /// Angle from the center of the `JVFlowerMenu` that the first `Pedal`'s center will be upon completion of expansion. Default it 0 (Directly above the `JVFlowerMenu`)
+    open var startAngle: CGFloat = 0
+    /// The amound of time the `JVFlowerMenu` will take to grow its `Pedal`'s when expanded. Default is 0.4 seconds
+    open var growthDuration: TimeInterval = 0.4
+    /// amount of time between `Pedal` growth during `JVFlowerMenu` expansion. Default is 0.6 seconds.
+    open var stagger: TimeInterval = 0.06
+    /// Boolean that lets you check the state of the `JVFlowerMenu`
+    open var menuIsExpanded: Bool = false
+    /// The delegate for the `JVFlowerMenu` where events will be broadcast.
+    open var delegate: JVFlowerMenuDelegate?
+
     //MARK: Private Variables
-    var pedalIDs: [String: UIView] = [String: UIView]()
-    var positionView: UIView!
-    var previousPosition: Position?
-    var arrayOfConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
     lazy var focusView = UIView()
-    //var theSuperView: UIView!
     
-    //MARK: Init functions
-    public init(withPosition: Position, andSuperView view: UIView, andImage: UIImage?){
-        super.init(image: andImage)
-        self.translatesAutoresizingMaskIntoConstraints = false
+    /// The designated initalizer for the `JVFlowerMenu`
+    ///
+    /// - Parameters:
+    ///   - I: The image that will represent the `JVFlowerMenu` to the user. If nil is passed then a basic hamburger menu is drawn.
+    ///   - title: The title of the `JVFlowerMenu` to communicate functionality to users. If nil is passed then nothing is displayed.
+    public override init(withImage I: UIImage?, andTitle title: String?){
+        
+        super.init(withImage: I, andTitle: title)
+
         self.isUserInteractionEnabled = true
-        view.addSubview(self)
-        self.constrainToPosition(thePosition: withPosition, animate: false)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapCenterView(_:)))
         self.addGestureRecognizer(tapGesture)
-        self.currentPosition = withPosition
+        
+        if I == nil {
+            self.imageView.image = self.getMenuImage()
+        }
     }
     
+    /// :nodoc:
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }
     
-    //MARK: Public functions
-    public func addPedal(theImage: UIImage, identifier: String){
-        let newPedal = self.createAndConstrainPedal(image: theImage, name: identifier)
-        self.addSubview(newPedal)
-        self.constrainPedalToSelf(thePedal: newPedal)
-        self.pedals.append(newPedal)
-        self.pedalIDs[identifier] = newPedal
+
+    
+    /// The method that can be used to add a `Pedal` to the `JVFlowerMenu`. Make sure the `JVFlowerMenu` has a superview or the view will be absolutly and positivly destroyed by garbage collection and you will be wondering what the hell happened!!!
+    ///
+    /// - Parameters:
+    ///   - image: The image for the new `Pedal`. Defaults to a basic `UIColor.blue` circle if nil is passed.
+    ///   - title: The title for the new `Pedal`. Defaults to nothing if nil is passed
+    public func addPedal(withImage image: UIImage?, withTitle title: String?){
+        let newPedal = Pedal(withImage: image, andTitle: title)
+        self.add(newPedal)
+    }
+    
+    
+    
+    /// Alternate function to add a `Pedal` that you have already initalized
+    ///
+    /// - Parameter pedal: The `Pedal` you want added to the `JVFlowerMenu`
+    public func add(_ pedal: Pedal) {
+        pedal.translatesAutoresizingMaskIntoConstraints = false
+        self.superview?.addSubview(pedal)
+        self.constrainPedalToSelfCenter(pedal)
+        self.pedals.append(pedal)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.didTapPopOutView(_:)))
-        newPedal.addGestureRecognizer(tapGesture)
+        pedal.addGestureRecognizer(tapGesture)
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.pannedViews(_:)))
-        newPedal.addGestureRecognizer(panGesture)
-        newPedal.alpha = 0
-    }
-    
-    public func selectPedalWithID(identifier: String) {
-        for key in self.pedalIDs.keys {
-            if key == identifier {
-                
-                guard let view = self.pedalIDs[key] else{
-                    return
-                }
-                
-                self.delegate?.flowerMenuDidSelectPedalWithID(theMenu: self, identifier: key, pedal: view)
-            }
-        }
-    }
-    
-    public func getPedalFromIdentifier(identifier: String) -> UIView {
-        return UIView()
+        pedal.addGestureRecognizer(panGesture)
+        pedal.alpha = 0
+
     }
     
     
-    
-    public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    /// :nodoc:
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         if self.bounds.contains(point) {
             return true
         }
@@ -117,72 +118,58 @@ public class JVFlowerMenu: UIImageView {
         return false
     }
     
+    
+    
+    /// Make the `JVFlowerMenu` grow its pedals.
     public func grow(){
+        
         for (index, view) in self.pedals.enumerated() {
             let indexAsDouble = Double(index)
             
-            
-            UIView.animate(withDuration: self.growthDuration, delay: self.stagger * indexAsDouble, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.allowUserInteraction, animations: { 
+            UIView.animate(withDuration: self.growthDuration, delay: self.stagger * indexAsDouble, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.allowUserInteraction, animations: {
                 view.alpha = 1
-                view.transform = self.getTransformForPopupViewAtIndex(index: CGFloat(index))
+                view.transform = self.getTransformForPopupViewAtIndex(CGFloat(index))
             }, completion: { (didComplete) in
-                self.delegate?.flowerMenuDidExpand()
+                
             })
         }
         self.menuIsExpanded = true
-        
-        
-        for c in self.arrayOfConstraints {
-            c.constant += 100
-        }
-        
-        self.setNeedsLayout()
-        
-        UIView.animate(withDuration: 0.2) {
-            self.layoutIfNeeded()
-        }
-        
-        self.focusView.frame = self.superview!.frame
+        self.focusView.translatesAutoresizingMaskIntoConstraints = false
         self.focusView.alpha = 0.5
         self.focusView.backgroundColor = UIColor.black
         self.superview?.insertSubview(self.focusView, belowSubview: self)
+        self.constrainFocusView()
+        self.delegate?.flowerMenuDidExpand()
         
     }
     
+    
+    
+    /// Make the `JVFlowerMenu` shrivel its pedals.
     public func shrivel(){
+        
+        self.transform = CGAffineTransform.identity
+        
         for (index, view) in self.pedals.enumerated() {
             let indexAsDouble = Double(index)
             
-            UIView.animate(withDuration: self.growthDuration, delay: self.stagger * indexAsDouble, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.allowUserInteraction, animations: { 
+            UIView.animate(withDuration: self.growthDuration, delay: self.stagger * indexAsDouble, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.allowUserInteraction, animations: {
                 view.alpha = 0
                 view.transform = CGAffineTransform.identity
             }, completion: { (didComplete) in
-                self.delegate?.flowerMenuDidRetract()
+                
             })
         }
         self.menuIsExpanded = false
-        
-        for c in self.arrayOfConstraints {
-            c.constant -= 100
-        }
-        
-        self.setNeedsLayout()
-        
-        UIView.animate(withDuration: 0.2) {
-            self.layoutIfNeeded()
-        }
-        
         self.focusView.removeFromSuperview()
+        self.delegate?.flowerMenuDidRetract()
         
     }
     
     internal func didTapPopOutView(_ sender: UITapGestureRecognizer) {
-        for key in self.pedalIDs.keys {
-            guard let view = self.pedalIDs[key] else{
-                break
-            }
+        for view in self.pedals {
             if view == sender.view {
-                self.delegate?.flowerMenuDidSelectPedalWithID(theMenu: self, identifier: key, pedal: view)
+                self.delegate?.flowerMenuDidSelectPedalWithID(self, pedal: view)
             }
         }
     }
@@ -190,10 +177,8 @@ public class JVFlowerMenu: UIImageView {
     internal func didTapCenterView(_ sender: UITapGestureRecognizer){
         if self.menuIsExpanded {
             self.shrivel()
-            //self.currentPosition = .UpperRight
         }else{
             self.grow()
-            //self.currentPosition = .Center
         }
     }
     
@@ -212,11 +197,11 @@ public class JVFlowerMenu: UIImageView {
             }
         }
         
-        let point = sender.location(in: self)
+        let point = sender.location(in: self.superview)
         
-        let centerX = self.bounds.origin.x + self.bounds.size.width / 2
+        let centerX = self.frame.origin.x + self.frame.size.width / 2
         
-        let centerY = self.bounds.origin.y + self.bounds.size.height / 2
+        let centerY = self.frame.origin.y + self.frame.size.height / 2
         
         if sender.state == UIGestureRecognizerState.changed {
             
@@ -228,8 +213,6 @@ public class JVFlowerMenu: UIImageView {
             
             let angle = atan * Double(180) / M_PI
             
-            //self.pedalDistance = sqrt(pow(point.x - centerX, 2) + pow(point.y - centerY, 2))
-            
             self.startAngle = CGFloat(angle) - self.pedalSpace * CGFloat(indexOfView!)
             
             theView.center = point
@@ -238,20 +221,20 @@ public class JVFlowerMenu: UIImageView {
             
             for (index, aView) in self.pedals.enumerated() {
                 if aView != theView {
-                    aView.transform = self.getTransformForPopupViewAtIndex(index: CGFloat(index))
+                    aView.transform = self.getTransformForPopupViewAtIndex(CGFloat(index))
                 }
             }
             
         }else if sender.state == UIGestureRecognizerState.ended {
             theView.center = CGPoint(x: centerX, y: centerY)
             for (index, aView) in self.pedals.enumerated() {
-                aView.transform = self.getTransformForPopupViewAtIndex(index: CGFloat(index))
+                aView.transform = self.getTransformForPopupViewAtIndex(CGFloat(index))
             }
         }
         
     }
     
-    internal func getTransformForPopupViewAtIndex(index: CGFloat) -> CGAffineTransform{
+    internal func getTransformForPopupViewAtIndex(_ index: CGFloat) -> CGAffineTransform{
         
         let newAngle = Double(self.startAngle + (self.pedalSpace * index))
         
@@ -262,131 +245,17 @@ public class JVFlowerMenu: UIImageView {
         return CGAffineTransform(translationX: CGFloat(deltaX), y: CGFloat(deltaY))
     }
     
-    private func createAndConstrainPedal(image: UIImage, name: String) -> UIView {
+    internal func getTransformToSuperViewCenter() -> CGAffineTransform {
         
-        let newPedal = UIView()
-        let pedalImage = UIImageView(image: image)
-        let pedalLabel = UILabel()
+        let deltaX = Double(self.superview!.center.x - self.center.x)
         
-        newPedal.translatesAutoresizingMaskIntoConstraints = false
-        pedalImage.translatesAutoresizingMaskIntoConstraints = false
-        newPedal.isUserInteractionEnabled = true
-        pedalLabel.isUserInteractionEnabled = true
-        pedalImage.isUserInteractionEnabled = true
-        pedalLabel.translatesAutoresizingMaskIntoConstraints = false
-        pedalLabel.numberOfLines = 1
-        if self.showPedalLabels == false {
-            pedalLabel.text = name
-            pedalLabel.isHidden = true
-        }
-        pedalLabel.text = name
-        pedalLabel.adjustsFontSizeToFitWidth = true
+        let deltaY = Double(self.superview!.center.y - self.center.y)
         
-        newPedal.addSubview(pedalImage)
-        newPedal.addSubview(pedalLabel)
-        
-        let dictionaryOfViews = ["image": pedalImage, "label": pedalLabel]
-        
-        self.constrainPedal(thePedal: newPedal, pedalSubViews: dictionaryOfViews)
-        
-        return newPedal
+        return CGAffineTransform(translationX: CGFloat(deltaX), y: CGFloat(deltaY))
         
     }
     
-    //MARK: Constraint Adding
-    func constrainToPosition(thePosition: Position, animate: Bool) {
-        if self.arrayOfConstraints.count > 0 {
-            self.superview?.removeConstraints(self.arrayOfConstraints)
-            self.arrayOfConstraints.removeAll()
-        }
-        
-        switch thePosition {
-        case .Center:
-            let verticalConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.superview, attribute: NSLayoutAttribute.centerY, multiplier: 1.0, constant: 0)
-            let horizontalConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.superview, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0)
-            self.arrayOfConstraints.append(verticalConstraint)
-            self.arrayOfConstraints.append(horizontalConstraint)
-            self.startAngle = 0
-            print("Constrain To Center")
-        case .LowerLeft:
-            let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-28-[me]", options: [], metrics: nil, views: ["me": self])
-            let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[me]-28-|", options: [], metrics: nil, views: ["me":self])
-            self.arrayOfConstraints.append(contentsOf: horizontalConstraints)
-            self.arrayOfConstraints.append(contentsOf: verticalConstraints)
-            self.startAngle = 10
-            print("Constrain To Lower Left")
-        case .LowerRight:
-            let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[me]-28-|", options: [], metrics: nil, views: ["me": self])
-            let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[me]-28-|", options: [], metrics: nil, views: ["me":self])
-            self.arrayOfConstraints.append(contentsOf: horizontalConstraints)
-            self.arrayOfConstraints.append(contentsOf: verticalConstraints)
-            self.startAngle = -80
-            print("Constrain To Lower Right")
-        case .UpperLeft:
-            if self.superview is UINavigationBar {
-                let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[me]", options: [], metrics: nil, views: ["me": self])
-                let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[me]", options: [], metrics: nil, views: ["me":self])
-                self.arrayOfConstraints.append(contentsOf: horizontalConstraints)
-                self.arrayOfConstraints.append(contentsOf: verticalConstraints)
-            }else{
-                let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[me]", options: [], metrics: nil, views: ["me": self])
-                let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[me]", options: [], metrics: nil, views: ["me":self])
-                self.arrayOfConstraints.append(contentsOf: horizontalConstraints)
-                self.arrayOfConstraints.append(contentsOf: verticalConstraints)
-            }
-            
-            print("Constrain To Upper Left")
-            self.startAngle = 100
-        case .UpperRight:
-            let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[me]-10-|", options: [], metrics: nil, views: ["me": self])
-            let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[me]", options: [], metrics: nil, views: ["me":self])
-            self.arrayOfConstraints.append(contentsOf: horizontalConstraints)
-            self.arrayOfConstraints.append(contentsOf: verticalConstraints)
-            self.startAngle = 170
-            print("Constrain To Upper Right")
-        }
-        
-        self.superview?.addConstraints(self.arrayOfConstraints)
-        self.setNeedsLayout()
-        
-        if animate {
-            UIView.animate(withDuration: 0.5) {
-                self.layoutIfNeeded()
-            }
-        }else{
-            self.layoutIfNeeded()
-        }
-    }
-    
-    private func constrainPedal(thePedal: UIView, pedalSubViews: [String: AnyObject]){
-        
-        var arrayOfConstraint = [NSLayoutConstraint]()
-        
-        let imageLabelVertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|[image][label]|", options: [], metrics: nil, views: pedalSubViews)
-        
-        let imageHorizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=0)-[image]-(>=0)-|", options: [], metrics: nil, views: pedalSubViews)
-        
-        guard let theImage = pedalSubViews["image"] as? UIImageView, let label = pedalSubViews["label"] as? UILabel else {
-            return
-        }
-        
-        if self.showPedalLabels == false {
-            let labeHeight = NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.height, multiplier: 1.0, constant: 0)
-            arrayOfConstraint.append(labeHeight)
-        }
-        
-        let moreImageHorizontal = NSLayoutConstraint(item: theImage, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: thePedal, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0)
-        
-        let labelHorizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[label]|", options: [], metrics: nil, views: pedalSubViews)
-        
-        arrayOfConstraint.append(contentsOf: imageLabelVertical)
-        arrayOfConstraint.append(contentsOf: imageHorizontal)
-        arrayOfConstraint.append(moreImageHorizontal)
-        arrayOfConstraint.append(contentsOf: labelHorizontal)
-        thePedal.addConstraints(arrayOfConstraint)
-    }
-    
-    private func constrainPedalToSelf(thePedal: UIView) {
+    fileprivate func constrainPedalToSelfCenter(_ thePedal: Pedal) {
         
         var arrayOfConstraints = [NSLayoutConstraint]()
         
@@ -398,8 +267,86 @@ public class JVFlowerMenu: UIImageView {
         arrayOfConstraints.append(centerX)
         arrayOfConstraints.append(centerY)
         
-        self.addConstraints(arrayOfConstraints)
+       // thePedal.centerConstraints = arrayOfConstraints
+        
+        self.superview?.addConstraints(arrayOfConstraints)
         
     }
     
+    
+    func constrainFocusView() {
+        var constraints = [NSLayoutConstraint]()
+        
+        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|[focus]|", options: [], metrics: nil, views: ["focus": self.focusView])
+        
+        constraints.append(contentsOf: vertical)
+        
+        let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[focus]|", options: [], metrics: nil, views: ["focus": self.focusView])
+        
+        constraints.append(contentsOf: horizontal)
+        
+        self.superview?.addConstraints(constraints)
+        
+    }
+
 }
+
+
+extension JVFlowerMenu {
+    func getMenuImage() -> UIImage {
+        //// Color Declarations
+        let fillColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
+        
+        //// Bezier Drawing
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 3.14, y: 11.4))
+        bezierPath.addLine(to: CGPoint(x: 40.86, y: 11.4))
+        bezierPath.addCurve(to: CGPoint(x: 44, y: 7.7), controlPoint1: CGPoint(x: 42.59, y: 11.4), controlPoint2: CGPoint(x: 44, y: 9.74))
+        bezierPath.addCurve(to: CGPoint(x: 40.86, y: 4), controlPoint1: CGPoint(x: 44, y: 5.66), controlPoint2: CGPoint(x: 42.59, y: 4))
+        bezierPath.addLine(to: CGPoint(x: 3.14, y: 4))
+        bezierPath.addCurve(to: CGPoint(x: 0, y: 7.7), controlPoint1: CGPoint(x: 1.41, y: 4), controlPoint2: CGPoint(x: 0, y: 5.66))
+        bezierPath.addCurve(to: CGPoint(x: 3.14, y: 11.4), controlPoint1: CGPoint(x: 0, y: 9.74), controlPoint2: CGPoint(x: 1.41, y: 11.4))
+        bezierPath.close()
+        bezierPath.move(to: CGPoint(x: 40.86, y: 18.8))
+        bezierPath.addLine(to: CGPoint(x: 3.14, y: 18.8))
+        bezierPath.addCurve(to: CGPoint(x: 0, y: 22.5), controlPoint1: CGPoint(x: 1.41, y: 18.8), controlPoint2: CGPoint(x: 0, y: 20.46))
+        bezierPath.addCurve(to: CGPoint(x: 3.14, y: 26.2), controlPoint1: CGPoint(x: 0, y: 24.54), controlPoint2: CGPoint(x: 1.41, y: 26.2))
+        bezierPath.addLine(to: CGPoint(x: 40.86, y: 26.2))
+        bezierPath.addCurve(to: CGPoint(x: 44, y: 22.5), controlPoint1: CGPoint(x: 42.59, y: 26.2), controlPoint2: CGPoint(x: 44, y: 24.54))
+        bezierPath.addCurve(to: CGPoint(x: 40.86, y: 18.8), controlPoint1: CGPoint(x: 44, y: 20.46), controlPoint2: CGPoint(x: 42.59, y: 18.8))
+        bezierPath.close()
+        bezierPath.move(to: CGPoint(x: 40.86, y: 33.6))
+        bezierPath.addLine(to: CGPoint(x: 3.14, y: 33.6))
+        bezierPath.addCurve(to: CGPoint(x: 0, y: 37.3), controlPoint1: CGPoint(x: 1.41, y: 33.6), controlPoint2: CGPoint(x: 0, y: 35.26))
+        bezierPath.addCurve(to: CGPoint(x: 3.14, y: 41), controlPoint1: CGPoint(x: 0, y: 39.34), controlPoint2: CGPoint(x: 1.41, y: 41))
+        bezierPath.addLine(to: CGPoint(x: 40.86, y: 41))
+        bezierPath.addCurve(to: CGPoint(x: 44, y: 37.3), controlPoint1: CGPoint(x: 42.59, y: 41), controlPoint2: CGPoint(x: 44, y: 39.34))
+        bezierPath.addCurve(to: CGPoint(x: 40.86, y: 33.6), controlPoint1: CGPoint(x: 44, y: 35.26), controlPoint2: CGPoint(x: 42.59, y: 33.6))
+        bezierPath.close()
+        bezierPath.miterLimit = 4;
+        
+        fillColor.setFill()
+        bezierPath.fill()
+        
+        let dash = CAShapeLayer()
+        dash.frame = CGRect(x: 0.0, y: 0.0, width: 45.0, height: 45.0)
+        dash.path = bezierPath.cgPath
+
+        let layer = dash
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            print("No Graphics Context")
+            return UIImage()
+        }
+        
+        layer.render(in: context)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return image!
+        
+    }
+}
+
