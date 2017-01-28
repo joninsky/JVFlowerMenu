@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JVFlowerMenu Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/JVFlowerMenu" class="dashAnchor"></a>
+    <a title="JVFlowerMenu Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">JVFlowerMenu Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">JVFlowerMenu Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        JVFlowerMenu Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/JVFlowerMenu.html">JVFlowerMenu</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Pedal.html">Pedal</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/JVFlowerMenuDelegate.html">JVFlowerMenuDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>JVFlowerMenu</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">JVFlowerMenu</span><span class="p">:</span> <span class="kt"><a href="../Classes/Pedal.html">Pedal</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>The class that represents the <code>JVFlowerMenu</code></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Variables"></a>
+                <a name="//apple_ref/swift/Section/Public Variables" class="dashAnchor"></a>
+                <a href="#/Public%20Variables">
+                  <h3 class="section-name">Public Variables</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12JVFlowerMenu12JVFlowerMenu6pedalsGSaCS_5Pedal_"></a>
+                    <a name="//apple_ref/swift/Property/pedals" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12JVFlowerMenu12JVFlowerMenu6pedalsGSaCS_5Pedal_">pedals</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code><a href="../Classes/Pedal.html">Pedal</a></code>&rsquo;s that have been added to the menu</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">pedals</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Pedal.html">Pedal</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/Pedal.html">Pedal</a></span><span class="p">]()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12JVFlowerMenu12JVFlowerMenu13pedalDistanceV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/pedalDistance" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12JVFlowerMenu12JVFlowerMenu13pedalDistanceV12CoreGraphics7CGFloat">pedalDistance</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The distance the <code><a href="../Classes/Pedal.html">Pedal</a></code>&rsquo;s will fly away from the <code>JVFlowerMenu</code>. The default is 100</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">pedalDistance</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">100</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12JVFlowerMenu12JVFlowerMenu10pedalSpaceV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/pedalSpace" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12JVFlowerMenu12JVFlowerMenu10pedalSpaceV12CoreGraphics7CGFloat">pedalSpace</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The space between each <code><a href="../Classes/Pedal.html">Pedal</a></code> once expanded. The Default is 50</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">pedalSpace</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">50</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12JVFlowerMenu12JVFlowerMenu10startAngleV12CoreGraphics7CGFloat"></a>
+                    <a name="//apple_ref/swift/Property/startAngle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12JVFlowerMenu12JVFlowerMenu10startAngleV12CoreGraphics7CGFloat">startAngle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Angle from the center of the <code>JVFlowerMenu</code> that the first <code><a href="../Classes/Pedal.html">Pedal</a></code>&rsquo;s center will be upon completion of expansion. Default it 0 (Directly above the <code>JVFlowerMenu</code>)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">startAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12JVFlowerMenu12JVFlowerMenu14growthDurationSd"></a>
+                    <a name="//apple_ref/swift/Property/growthDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12JVFlowerMenu12JVFlowerMenu14growthDurationSd">growthDuration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The amound of time the <code>JVFlowerMenu</code> will take to grow its <code><a href="../Classes/Pedal.html">Pedal</a></code>&rsquo;s when expanded. Default is 0.4 seconds</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">growthDuration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.4</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12JVFlowerMenu12JVFlowerMenu7staggerSd"></a>
+                    <a name="//apple_ref/swift/Property/stagger" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12JVFlowerMenu12JVFlowerMenu7staggerSd">stagger</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>amount of time between <code><a href="../Classes/Pedal.html">Pedal</a></code> growth during <code>JVFlowerMenu</code> expansion. Default is 0.6 seconds.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">stagger</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.06</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12JVFlowerMenu12JVFlowerMenu14menuIsExpandedSb"></a>
+                    <a name="//apple_ref/swift/Property/menuIsExpanded" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12JVFlowerMenu12JVFlowerMenu14menuIsExpandedSb">menuIsExpanded</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Boolean that lets you check the state of the <code>JVFlowerMenu</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">menuIsExpanded</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC12JVFlowerMenu12JVFlowerMenu8delegateGSqPS_20JVFlowerMenuDelegate__"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12JVFlowerMenu12JVFlowerMenu8delegateGSqPS_20JVFlowerMenuDelegate__">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The delegate for the <code>JVFlowerMenu</code> where events will be broadcast.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/JVFlowerMenuDelegate.html">JVFlowerMenuDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Private%20Variables"></a>
+                <a name="//apple_ref/swift/Section/Private Variables" class="dashAnchor"></a>
+                <a href="#/Private%20Variables">
+                  <h3 class="section-name">Private Variables</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12JVFlowerMenu12JVFlowerMenucFT9withImageGSqCSo7UIImage_8andTitleGSqSS__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(withImage:andTitle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12JVFlowerMenu12JVFlowerMenucFT9withImageGSqCSo7UIImage_8andTitleGSqSS__S0_">init(withImage:andTitle:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The designated initalizer for the <code>JVFlowerMenu</code></p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>I: The image that will represent the <code>JVFlowerMenu</code> to the user. If nil is passed then a basic hamburger menu is drawn.</li>
+<li>title: The title of the <code>JVFlowerMenu</code> to communicate functionality to users. If nil is passed then nothing is displayed.</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="n">withImage</span> <span class="kt">I</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?,</span> <span class="n">andTitle</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>I</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The image that will represent the <code>JVFlowerMenu</code> to the user. If nil is passed then a basic hamburger menu is drawn.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The title of the <code>JVFlowerMenu</code> to communicate functionality to users. If nil is passed then nothing is displayed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12JVFlowerMenu12JVFlowerMenu8addPedalFT9withImageGSqCSo7UIImage_9withTitleGSqSS__T_"></a>
+                    <a name="//apple_ref/swift/Method/addPedal(withImage:withTitle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12JVFlowerMenu12JVFlowerMenu8addPedalFT9withImageGSqCSo7UIImage_9withTitleGSqSS__T_">addPedal(withImage:withTitle:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The method that can be used to add a <code><a href="../Classes/Pedal.html">Pedal</a></code> to the <code>JVFlowerMenu</code>. Make sure the <code>JVFlowerMenu</code> has a superview or the view will be absolutly and positivly destroyed by garbage collection and you will be wondering what the hell happened!!!</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>image: The image for the new <code><a href="../Classes/Pedal.html">Pedal</a></code>. Defaults to a basic <code>UIColor.blue</code> circle if nil is passed.</li>
+<li>title: The title for the new <code><a href="../Classes/Pedal.html">Pedal</a></code>. Defaults to nothing if nil is passed</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addPedal</span><span class="p">(</span><span class="n">withImage</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?,</span> <span class="n">withTitle</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>image</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The image for the new <code>Pedal</code>. Defaults to a basic <code>UIColor.blue</code> circle if nil is passed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The title for the new <code>Pedal</code>. Defaults to nothing if nil is passed</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12JVFlowerMenu12JVFlowerMenu3addFCS_5PedalT_"></a>
+                    <a name="//apple_ref/swift/Method/add(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12JVFlowerMenu12JVFlowerMenu3addFCS_5PedalT_">add(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Alternate function to add a <code><a href="../Classes/Pedal.html">Pedal</a></code> that you have already initalized</p>
+
+<div class="aside aside-parameter">
+    <p class="aside-title">Parameter</p>
+    Parameter pedal: The <code><a href="../Classes/Pedal.html">Pedal</a></code> you want added to the <code>JVFlowerMenu</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">pedal</span><span class="p">:</span> <span class="kt"><a href="../Classes/Pedal.html">Pedal</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>pedal</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Pedal</code> you want added to the <code>JVFlowerMenu</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12JVFlowerMenu12JVFlowerMenu4growFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/grow()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12JVFlowerMenu12JVFlowerMenu4growFT_T_">grow()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make the <code>JVFlowerMenu</code> grow its pedals.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">grow</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC12JVFlowerMenu12JVFlowerMenu7shrivelFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/shrivel()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC12JVFlowerMenu12JVFlowerMenu7shrivelFT_T_">shrivel()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Make the <code>JVFlowerMenu</code> shrivel its pedals.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">shrivel</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/joninsky/JVFlowerMenu.git" target="_blank" rel="external">pebblebee</a>. All rights reserved. (Last updated: 2017-01-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
