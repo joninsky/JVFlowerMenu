@@ -14,7 +14,7 @@ s.source           = { :git => "https://github.com/joninsky/JVFlowerMenu.git", :
 
 s.platform     = :ios, '12.4'
 s.requires_arc = true
-
+s.swift_version = '5'
 s.source_files = "JVFlowerMenu/**/*"
 
 end
