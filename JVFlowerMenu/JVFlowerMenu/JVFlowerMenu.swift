@@ -126,7 +126,7 @@ open class JVFlowerMenu: Pedal {
         for (index, view) in self.pedals.enumerated() {
             let indexAsDouble = Double(index)
             
-            UIView.animate(withDuration: self.growthDuration, delay: self.stagger * indexAsDouble, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+            UIView.animate(withDuration: self.growthDuration, delay: self.stagger * indexAsDouble, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: UIView.AnimationOptions.allowUserInteraction, animations: {
                 view.alpha = 1
                 view.transform = self.getTransformForPopupViewAtIndex(CGFloat(index))
             }, completion: { (didComplete) in
@@ -153,7 +153,7 @@ open class JVFlowerMenu: Pedal {
         for (index, view) in self.pedals.enumerated() {
             let indexAsDouble = Double(index)
             
-            UIView.animate(withDuration: self.growthDuration, delay: self.stagger * indexAsDouble, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+            UIView.animate(withDuration: self.growthDuration, delay: self.stagger * indexAsDouble, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: UIView.AnimationOptions.allowUserInteraction, animations: {
                 view.alpha = 0
                 view.transform = CGAffineTransform.identity
             }, completion: { (didComplete) in
@@ -166,7 +166,7 @@ open class JVFlowerMenu: Pedal {
         
     }
     
-    internal func didTapPopOutView(_ sender: UITapGestureRecognizer) {
+    @objc internal func didTapPopOutView(_ sender: UITapGestureRecognizer) {
         for view in self.pedals {
             if view == sender.view {
                 self.delegate?.flowerMenuDidSelectPedalWithID(self, pedal: view)
@@ -174,7 +174,7 @@ open class JVFlowerMenu: Pedal {
         }
     }
     
-    internal func didTapCenterView(_ sender: UITapGestureRecognizer){
+    @objc internal func didTapCenterView(_ sender: UITapGestureRecognizer){
         if self.menuIsExpanded {
             self.shrivel()
         }else{
@@ -182,7 +182,7 @@ open class JVFlowerMenu: Pedal {
         }
     }
     
-    internal func pannedViews(_ sender: UIPanGestureRecognizer) {
+    @objc internal func pannedViews(_ sender: UIPanGestureRecognizer) {
         
         guard let theView = sender.view else {
             return
@@ -203,7 +203,7 @@ open class JVFlowerMenu: Pedal {
         
         let centerY = self.frame.origin.y + self.frame.size.height / 2
         
-        if sender.state == UIGestureRecognizerState.changed {
+        if sender.state == UIGestureRecognizer.State.changed {
             
             let deltaX = point.x - centerX
             
@@ -211,7 +211,7 @@ open class JVFlowerMenu: Pedal {
             
             let atan = Double(atan2(deltaX, -deltaY))
             
-            let angle = atan * Double(180) / M_PI
+            let angle = atan * Double(180) / Double.pi
             
             self.startAngle = CGFloat(angle) - self.pedalSpace * CGFloat(indexOfView!)
             
@@ -225,7 +225,7 @@ open class JVFlowerMenu: Pedal {
                 }
             }
             
-        }else if sender.state == UIGestureRecognizerState.ended {
+        }else if sender.state == UIGestureRecognizer.State.ended {
             theView.center = CGPoint(x: centerX, y: centerY)
             for (index, aView) in self.pedals.enumerated() {
                 aView.transform = self.getTransformForPopupViewAtIndex(CGFloat(index))
@@ -238,9 +238,9 @@ open class JVFlowerMenu: Pedal {
         
         let newAngle = Double(self.startAngle + (self.pedalSpace * index))
         
-        let deltaY = Double(-self.pedalDistance) * cos(newAngle / 180 * M_PI)
+        let deltaY = Double(-self.pedalDistance) * cos(newAngle / 180 * Double.pi)
         
-        let deltaX = Double(self.pedalDistance) * sin(newAngle / 180 * M_PI)
+        let deltaX = Double(self.pedalDistance) * sin(newAngle / 180 * Double.pi)
         
         return CGAffineTransform(translationX: CGFloat(deltaX), y: CGFloat(deltaY))
     }
@@ -260,9 +260,9 @@ open class JVFlowerMenu: Pedal {
         var arrayOfConstraints = [NSLayoutConstraint]()
         
         
-        let centerX = NSLayoutConstraint(item: thePedal, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0)
+        let centerX = NSLayoutConstraint(item: thePedal, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0)
         
-        let centerY = NSLayoutConstraint(item: thePedal, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerY, multiplier: 1.0, constant: 0)
+        let centerY = NSLayoutConstraint(item: thePedal, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1.0, constant: 0)
         
         arrayOfConstraints.append(centerX)
         arrayOfConstraints.append(centerY)

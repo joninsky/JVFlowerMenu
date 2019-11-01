@@ -56,11 +56,11 @@ open class Pedal: UIVisualEffectView {
         //Set the interpolating motion effects
         let offSet = 30.0
         
-        let motionX = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
+        let motionX = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis)
         motionX.maximumRelativeValue = offSet
         motionX.minimumRelativeValue = -offSet
         
-        let motionY = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffectType.tiltAlongVerticalAxis)
+        let motionY = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis)
         motionY.maximumRelativeValue = offSet
         motionY.minimumRelativeValue = -offSet
         
@@ -72,7 +72,7 @@ open class Pedal: UIVisualEffectView {
         //Set up Image View
         self.imageView = UIImageView()
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.imageView.contentMode = UIViewContentMode.scaleAspectFit
+        self.imageView.contentMode = UIView.ContentMode.scaleAspectFit
 
         //Set up Label
         self.text = UILabel()
@@ -119,15 +119,15 @@ open class Pedal: UIVisualEffectView {
     func constrain() {
         var constraints = [NSLayoutConstraint]()
         
-        let imageHorizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-3-[image]-3-|", options: [], metrics: nil, views: ["image": self.imageView])
+        let imageHorizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-3-[image]-3-|", options: [], metrics: nil, views: ["image": self.imageView as Any])
         
         constraints.append(contentsOf: imageHorizontal)
         
-        let allVertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|-3-[image]-3-[text]|", options: [], metrics: nil, views: ["image": self.imageView, "text": self.text])
+        let allVertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|-3-[image]-3-[text]|", options: [], metrics: nil, views: ["image": self.imageView as Any, "text": self.text as Any])
         
         constraints.append(contentsOf: allVertical)
         
-        let textHorizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-3-[text]-3-|", options: [], metrics: nil, views: ["text": self.text])
+        let textHorizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-3-[text]-3-|", options: [], metrics: nil, views: ["text": self.text as Any])
         
         constraints.append(contentsOf: textHorizontal)
         

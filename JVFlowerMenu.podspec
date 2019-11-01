@@ -9,10 +9,10 @@ Lets you create a fun pop out radial (Flower pedals) menu. See docs and README f
 
 s.homepage         = "https://github.com/joninsky/JVFlowerMenu.git"
 s.license          = 'MIT'
-s.author           = { "pebblebee" => "dev@pebblebee.com" }
+s.author           = { "Jon Vogel" => "joninsky@gmail.com" }
 s.source           = { :git => "https://github.com/joninsky/JVFlowerMenu.git", :tag => s.version.to_s}
 
-s.platform     = :ios, '9.4'
+s.platform     = :ios, '12.4'
 s.requires_arc = true
 
 s.source_files = "JVFlowerMenu/**/*"
